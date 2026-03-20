@@ -1,0 +1,71 @@
+﻿<Window x:Class="Client.EnterMainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="EnterMainWindow" Height="450" Width="800">
+    <Grid>
+        <Image Source="/bg_img.jpg" Stretch="Fill" Opacity="0.82" HorizontalAlignment="Stretch" Height="NaN" VerticalAlignment="Stretch" Width="NaN">
+            <Image.Effect>
+                <BlurEffect/>
+            </Image.Effect>
+        </Image>
+
+        <Button x:Name="Refresh_Button" Content="REFRESH" HorizontalAlignment="Left" Height="41" VerticalAlignment="Top" Width="77" FontFamily="Consolas" FontSize="16" FontWeight="Bold" Margin="695,170,0,0" BorderThickness="3,3,3,3"  BorderBrush="Black"  Click="Refresh_Button_Click">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+
+        <ScrollViewer HorizontalAlignment="Center" Height="203" Margin="0,63,0,0" VerticalAlignment="Top" Width="568">
+            <ScrollViewer.Background>
+                <SolidColorBrush Color="Black" Opacity="0.55"/>
+            </ScrollViewer.Background>
+            <ListBox x:Name="Room_List" Height="150" Width="530" d:ItemsSource="{d:SampleData ItemCount=7}">
+                <ListBox.Background>
+                    <SolidColorBrush Color="White" Opacity="0.55"/>
+                </ListBox.Background>
+            </ListBox>
+        </ScrollViewer>
+        <Button x:Name="LeaveButton" HorizontalAlignment="Left" Height="41" VerticalAlignment="Top" Width="61" RenderTransformOrigin="0.5,0.5" BorderBrush="{x:Null}" Click="LeaveButton_Click" Margin="9,0,0,0">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="179.784"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+            <Button.Background>
+                <ImageBrush ImageSource="/exitbutton.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="CreateLobbyButton" Content="CREATE" HorizontalAlignment="Left" Height="42" Margin="593,344,0,0" VerticalAlignment="Top" Width="91" FontFamily="Consolas" FontWeight="Bold" FontSize="16" BorderBrush="Black" BorderThickness="3,3,3,3" Click="CreateLobbyButton_Click_1">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <Button x:Name="JoinGameButton" Content="JOIN" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="77" FontFamily="Consolas" FontSize="16" FontWeight="Bold" Margin="694,124,0,0" BorderThickness="3,3,3,3" BorderBrush="Black" Click="JoinGameButton_Click">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <Label Content="EXIT" HorizontalAlignment="Left" Height="27" Margin="53,5,0,0" VerticalAlignment="Top" Width="53" FontFamily="Consolas" FontSize="16" FontWeight="Bold" Foreground="#FF0A0909"/>
+        <TextBox x:Name="Create_Lobby_TextBox" HorizontalAlignment="Center" Height="56" Margin="0,341,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="374" BorderBrush="White" Foreground="White">
+            <TextBox.Background>
+                <SolidColorBrush Color="Black" Opacity="0.55"/>
+            </TextBox.Background>
+        </TextBox>
+        <Label Content="Enter Lobby Name" HorizontalAlignment="Left" Height="26" Margin="344,391,0,0" VerticalAlignment="Top" Width="173" FontWeight="Bold" FontFamily="Calibri">
+            <Label.Foreground>
+                <SolidColorBrush Color="#FFE8E3E3" Opacity="0.6"/>
+            </Label.Foreground>
+        </Label>
+        <Label Content="CREATE  NEW  LOBBY" HorizontalAlignment="Center" Height="40" Margin="0,306,0,0" VerticalAlignment="Top" Width="312" FontFamily="Papyrus" FontWeight="Bold" Foreground="Black" FontSize="20"/>
+        <Label Content="LOBBY  PORTAL" HorizontalAlignment="Center" Height="40" Margin="0,23,0,0" VerticalAlignment="Top" Width="214" FontFamily="Papyrus" FontWeight="Bold" Foreground="Black" FontSize="20"/>
+        <Label x:Name="UsernameLabel" Content="username" HorizontalAlignment="Left" Height="33" Margin="720,7,0,0" VerticalAlignment="Top" Width="81" FontFamily="Papyrus" FontWeight="Bold" Foreground="White" FontSize="16" RenderTransformOrigin="0.802,0.516"/>
+        <Ellipse HorizontalAlignment="Left" Height="36" Margin="685,7,0,0" VerticalAlignment="Top" Width="38" Fill="#7393B3" Stroke="Black"/>
+        <Label x:Name="Initials" Content="AB" HorizontalAlignment="Left" Height="36" Margin="685,7,0,0" VerticalAlignment="Top" Width="38" FontFamily="Consolas" FontWeight="Bold" FontSize="13" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+    </Grid>
+</Window>
