@@ -13,7 +13,7 @@ namespace Client
 
     public partial class MainWindow : Window
     {
-        private string username  = "";
+        private string username = "";
         private BServerInterface foob;
         public MainWindow()
         {
@@ -31,7 +31,7 @@ namespace Client
             // reset visibility
             Status_Label.Visibility = Visibility.Collapsed;
 
-            if (string.IsNullOrWhiteSpace(username) || username.Contains(" ")) 
+            if (string.IsNullOrWhiteSpace(username) || username.Contains(" "))
             {
                 Status_Label.Content = "Invalid username";
                 Status_Label.Foreground = Brushes.Red;
@@ -53,7 +53,7 @@ namespace Client
             else
             {
                 foob.getUserAccountInfo(username);
-                if(foob.IfLoggedIn(username))
+                if (foob.IfLoggedIn(username))
                 {
                     Status_Label.Content = "Username Already Logged In";
                     Status_Label.Foreground = Brushes.Red;
@@ -64,7 +64,7 @@ namespace Client
                     Status_Label.Content = "Login Success as " + "'" + username + "'";
                     Status_Label.Foreground = Brushes.LimeGreen;
                     Status_Label.Visibility = Visibility.Visible;
-                    
+
                     foob.login(username);
                     OpenNextWindow();
                 }

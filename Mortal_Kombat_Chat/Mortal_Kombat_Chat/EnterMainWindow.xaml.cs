@@ -1,4 +1,5 @@
 ﻿using BusinessServer;
+using System;
 using System.Collections.Generic;
 using System.Threading;
 using System.Windows;
@@ -40,12 +41,12 @@ namespace Client
 
         private string GetInitials(string username)
         {
-            return username.Substring(0, 2).ToUpper();
+            return username.Substring(0, Math.Min(2, username.Length)).ToUpper();
         }
 
         private void ListenToServer()
         {
-            while(true)
+            while (true)
             {
                 Thread.Sleep(5000);
                 roomListDelegate.Invoke();
@@ -64,7 +65,7 @@ namespace Client
         {
             Room_List.Items.Clear();
             List<string> allSevers = foob.GetAllRoom();
-            if(allSevers.Count > 0)
+            if (allSevers.Count > 0)
             {
                 foreach (string server in allSevers)
                 {
@@ -75,11 +76,11 @@ namespace Client
 
         private void JoinGameButton_Click(object sender, RoutedEventArgs e)
         {
-            if(Room_List.SelectedItem != null)
+            if (Room_List.SelectedItem != null)
             {
                 string selectServer = Room_List.SelectedItem.ToString();
                 Room_List.SelectedItem = null;
-                if(foob.addJoinedServer(username, selectServer))
+                if (foob.addJoinedServer(username, selectServer))
                 {
                     Lobby lobby = new Lobby(foob, selectServer, username, this);
                     lobby.Show();

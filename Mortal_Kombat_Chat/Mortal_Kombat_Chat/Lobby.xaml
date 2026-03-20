@@ -4,10 +4,13 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="Lobby" Height="450" Width="800">
+        Title="MainWindow" Height="480" Width="830"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen">
+
     <Grid HorizontalAlignment="Left" Height="430" Margin="-21,0,0,0" VerticalAlignment="Top" Width="854">
-        <Image Margin="0,0,22,-23" Source="/lobby_img.jpg" Stretch="Fill"/>
-        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="39" VerticalAlignment="Top" Width="844" Margin="-12,0,0,0">
+        <Image Margin="0,0,-16,-35" Source="/lobby_img.jpg" Stretch="Fill"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="39" VerticalAlignment="Top" Width="866" Margin="-12,0,0,0">
             <Border.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black"/>
@@ -15,18 +18,22 @@
                 </LinearGradientBrush>
             </Border.Background>
         </Border>
-        <Border BorderThickness="5,5,5,5" HorizontalAlignment="Left" Height="63" Margin="190,341,0,0" VerticalAlignment="Top" Width="611" BorderBrush="White">
+        <Border BorderThickness="5,5,5,5" HorizontalAlignment="Left" Height="63" Margin="210,341,0,0" VerticalAlignment="Top" Width="611" BorderBrush="White">
             <Border.Background>
                 <SolidColorBrush Color="#FFFBFBFB" Opacity="0.55"/>
             </Border.Background>
-            <Grid HorizontalAlignment="Left" Height="52" VerticalAlignment="Top" Width="674">
+            <Grid HorizontalAlignment="Left" Height="52" VerticalAlignment="Center" Width="674" Margin="2,0,0,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition Height="0*"/>
+                </Grid.RowDefinitions>
                 <Button x:Name="Add_Document_Button" HorizontalAlignment="Left" Height="22" Margin="544,0,0,0" VerticalAlignment="Center" Width="22" BorderBrush="{x:Null}" RenderTransformOrigin="-0.295,0.911">
                     <Button.Background>
                         <ImageBrush ImageSource="/add_document_img.png"/>
                     </Button.Background>
                 </Button>
                 <TextBox x:Name="Chat_Message_TextBox" HorizontalAlignment="Left" Height="42" Margin="10,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="563" Background="#FFF9F9F9" TextChanged="Chat_Message_TextBox_TextChanged"/>
-                <Button x:Name="Add_Document_Button1" HorizontalAlignment="Left" Height="27" Margin="537,0,0,0" VerticalAlignment="Center" Width="28" BorderBrush="{x:Null}" Click="Add_Document_Button1_Click">
+                <Button x:Name="Add_Document_Button1" HorizontalAlignment="Left" Height="28" Margin="541,0,0,0" VerticalAlignment="Center" Width="28" BorderBrush="{x:Null}" Click="Add_Document_Button1_Click">
                     <Button.Background>
                         <ImageBrush ImageSource="/add_document_img.png"/>
                     </Button.Background>
@@ -53,13 +60,13 @@
             </ListBox>
         </Border>
         <Label Content="REFRESH" HorizontalAlignment="Left" Height="26" Margin="23,67,0,0" VerticalAlignment="Top" Width="65" Foreground="White" FontFamily="Consolas"/>
-        <Button x:Name="Start_Button" Content="START" HorizontalAlignment="Left" Height="38" VerticalAlignment="Top" Width="210" Background="{x:Null}" BorderBrush="White" BorderThickness="0,0,3,0" FontFamily="Perpetua Titling MT" FontSize="14" FontWeight="Bold" Foreground="White" Margin="200,0,0,0"/>
-        <Button x:Name="Option_Button" Content="OPTION" HorizontalAlignment="Left" Height="38" VerticalAlignment="Top" Width="200" Background="{x:Null}" BorderBrush="White" BorderThickness="0,0,3,0" FontFamily="Perpetua Titling MT" FontSize="14" FontWeight="Bold" Foreground="White" Margin="410,0,0,0"/>
-        <Grid x:Name="Public_Chat_Grid" Visibility="Visible" HorizontalAlignment="Left" Height="242" Margin="190,0,0,0" VerticalAlignment="Center" Width="611">
+        <Button x:Name="Start_Button" Content="START" HorizontalAlignment="Left" Height="38" VerticalAlignment="Top" Width="210" Background="{x:Null}" BorderBrush="White" BorderThickness="0,0,3,0" FontFamily="Perpetua Titling MT" FontSize="14" FontWeight="Bold" Foreground="White" Margin="204,0,0,0"/>
+        <Button x:Name="Option_Button" Content="OPTION" HorizontalAlignment="Left" Height="38" VerticalAlignment="Top" Width="200" Background="{x:Null}" BorderBrush="White" BorderThickness="0,0,3,0" FontFamily="Perpetua Titling MT" FontSize="14" FontWeight="Bold" Foreground="White" Margin="420,0,0,0"/>
+        <Grid x:Name="Public_Chat_Grid" Visibility="Visible" HorizontalAlignment="Left" Height="242" Margin="209,0,0,0" VerticalAlignment="Center" Width="611">
             <Grid.Background>
                 <SolidColorBrush Color="#FF5D5D5D" Opacity="0.7"/>
             </Grid.Background>
-            <RichTextBox x:Name="Public_Chat_Message_Box" HorizontalAlignment="Center" Height="222" VerticalAlignment="Top" Width="611" BorderBrush="White" BorderThickness="5,5,5,5" VerticalScrollBarVisibility="Visible" Margin="0,20,0,0" Foreground="White">
+            <RichTextBox x:Name="Public_Chat_Message_Box" HorizontalAlignment="Center" Height="222" VerticalAlignment="Top" Width="611" BorderBrush="White" BorderThickness="5,5,5,5" VerticalScrollBarVisibility="Visible" Margin="0,19,0,0" Foreground="White">
                 <RichTextBox.Background>
                     <SolidColorBrush Color="Black" Opacity="0.6"/>
                 </RichTextBox.Background>
@@ -71,8 +78,8 @@
             </RichTextBox>
             <Label Content="PUBLIC CHAT ROOM" HorizontalAlignment="Center" Height="26" Margin="0,-4,0,0" VerticalAlignment="Top" Width="119" Foreground="White" FontWeight="Bold" FontFamily="Consolas"/>
         </Grid>
-        <Button x:Name="PublicChat_Button" Content="PUBLIC CHAT" HorizontalAlignment="Left" Height="38" VerticalAlignment="Top" Width="134" Margin="190,56,0,0" Background="#FF8A7E7E" FontFamily="Consolas" FontSize="14" FontWeight="Bold" Click="PublicChat_Button_Click"/>
-        <Button x:Name="PrivateChat_Button" Content="PRIVATE CHAT" HorizontalAlignment="Left" Height="38" VerticalAlignment="Top" Width="134" Margin="325,56,0,0" Background="#FFFFFBFB" FontFamily="Consolas" FontSize="14" FontWeight="Bold" Click="PrivateChat_Button_Click"/>
+        <Button x:Name="PublicChat_Button" Content="PUBLIC CHAT" HorizontalAlignment="Left" Height="38" VerticalAlignment="Top" Width="134" Margin="209,56,0,0" Background="#FF8A7E7E" FontFamily="Consolas" FontSize="14" FontWeight="Bold" Click="PublicChat_Button_Click"/>
+        <Button x:Name="PrivateChat_Button" Content="PRIVATE CHAT" HorizontalAlignment="Left" Height="38" VerticalAlignment="Top" Width="134" Margin="355,56,0,0" Background="#FFFFFBFB" FontFamily="Consolas" FontSize="14" FontWeight="Bold" Click="PrivateChat_Button_Click"/>
         <Grid x:Name="Private_Chat_Grid" Visibility="Collapsed" HorizontalAlignment="Left" Height="242" Margin="190,0,0,0" VerticalAlignment="Center" Width="611">
             <Grid.Background>
                 <SolidColorBrush Color="#FF5D5D5D" Opacity="0.7"/>
@@ -89,16 +96,17 @@
             </RichTextBox>
             <Label Content="PRIVATE CHAT ROOM" HorizontalAlignment="Center" Height="26" Margin="0,-4,0,0" VerticalAlignment="Top" Width="123" Foreground="White" FontWeight="Bold" FontFamily="Consolas"/>
         </Grid>
-        <Button x:Name="Send_Message_Button" HorizontalAlignment="Left" Height="38" Margin="762,354,0,0" VerticalAlignment="Top" Width="40" BorderBrush="{x:Null}" Click="Button_Click">
+        <Button x:Name="Send_Message_Button" HorizontalAlignment="Left" Height="38" Margin="783,354,0,0" VerticalAlignment="Top" Width="40" BorderBrush="{x:Null}" Click="Button_Click">
             <Button.Background>
                 <ImageBrush ImageSource="/send_message_img.png"/>
             </Button.Background>
         </Button>
         <Button x:Name="Exit_Button" Content="EXIT" HorizontalAlignment="Left" Height="38" VerticalAlignment="Top" Width="200" Background="{x:Null}" BorderBrush="White" BorderThickness="0,0,3,0" FontFamily="Perpetua Titling MT" FontSize="14" FontWeight="Bold" Foreground="White" Click="Exit_Button_Click"/>
-        <Button x:Name="Add_Client" Content="ADD CLIENT" HorizontalAlignment="Left" Height="38" VerticalAlignment="Top" Width="211" Background="{x:Null}" BorderBrush="White" BorderThickness="0,0,3,0" FontFamily="Perpetua Titling MT" FontSize="14" FontWeight="Bold" Foreground="White" Margin="610,0,0,0" Click="Add_New_Client"/>
-        <Label x:Name="UsernameLabel" Content="username" HorizontalAlignment="Left" Height="33" Margin="740,44,0,0" VerticalAlignment="Top" Width="81" FontFamily="Papyrus" FontWeight="Bold" Foreground="White" FontSize="16" RenderTransformOrigin="0.802,0.516"/>
-        <Ellipse HorizontalAlignment="Left" Height="36" Margin="704,44,0,0" VerticalAlignment="Top" Width="38" Fill="#7393B3" Stroke="Black"/>
-        <Label x:Name="Initials" Content="AB" HorizontalAlignment="Left" Height="36" Margin="704,43,0,0" VerticalAlignment="Top" Width="38" FontFamily="Consolas" FontWeight="Bold" FontSize="13" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Button x:Name="Add_Client" Content="ADD CLIENT" HorizontalAlignment="Left" Height="38" VerticalAlignment="Top" Width="211" Background="{x:Null}" BorderBrush="White" BorderThickness="0,0,3,0" FontFamily="Perpetua Titling MT" FontSize="14" FontWeight="Bold" Foreground="White" Margin="638,0,0,0" Click="Add_New_Client"/>
+        <Label x:Name="UsernameLabel" Content="username" HorizontalAlignment="Left" Height="33" Margin="756,44,0,0" VerticalAlignment="Top" Width="81" FontFamily="Papyrus" FontWeight="Bold" Foreground="White" FontSize="16" RenderTransformOrigin="0.802,0.516"/>
+        <Ellipse HorizontalAlignment="Left" Height="36" Margin="715,44,0,0" VerticalAlignment="Top" Width="38" Fill="#7393B3" Stroke="Black"/>
+        <Label x:Name="Initials" Content="AB" HorizontalAlignment="Left" Height="36" Margin="716,43,0,0" VerticalAlignment="Top" Width="38" FontFamily="Consolas" FontWeight="Bold" FontSize="13" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Image Margin="19,362,655,8" Source="/Image2.png" Stretch="Uniform" Width="180" Height="60"/>
     </Grid>
 
 </Window>

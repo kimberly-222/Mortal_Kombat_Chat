@@ -55,7 +55,7 @@ namespace Client
 
         private string GetInitials(string username)
         {
-            return username.Substring(0, 2).ToUpper();
+            return username.Substring(0, Math.Min(2, username.Length)).ToUpper();
         }
 
         private void UpdateJoinedRoomList()
@@ -73,7 +73,7 @@ namespace Client
 
         private void UpdatePublicChatRoom()
         {
-            Dispatcher.Invoke(()=>
+            Dispatcher.Invoke(() =>
             {
                 Public_Chat_Message_Box.Document.Blocks.Clear();
                 List<string> messages = foob.getGlobalMessage(roomName);
@@ -84,12 +84,12 @@ namespace Client
                 {
                     foreach (int loc in files)
                     {
-                        if(loc == i)
+                        if (loc == i)
                         {
                             isFile = true;
                         }
                     }
-                    if(isFile)
+                    if (isFile)
                     {
                         loadFileServer(message);
                     }
@@ -106,8 +106,8 @@ namespace Client
 
         private void UpdatePrivateChatRoom()
         {
-            Dispatcher.Invoke(() => 
-            { 
+            Dispatcher.Invoke(() =>
+            {
                 Private_Chat_Message_Box.Document.Blocks.Clear();
                 refreshPrivateMessage();
             });
@@ -148,7 +148,7 @@ namespace Client
         {
             if (allChat)
             {
-                if(message.Equals("") || Chat_Message_TextBox.Text.Equals(""))
+                if (message.Equals("") || Chat_Message_TextBox.Text.Equals(""))
                 {
                     MessageBox.Show("Please enter a message.");
                 }
@@ -161,9 +161,9 @@ namespace Client
                     Chat_Message_TextBox.Clear();
                 }
             }
-            else if(pmChat)
+            else if (pmChat)
             {
-                if(currPmName != null)
+                if (currPmName != null)
                 {
                     if (message.Equals("") || Chat_Message_TextBox.Text.Equals(""))
                     {
@@ -192,7 +192,7 @@ namespace Client
 
         private void Joined_Users_List_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
         {
-            if(Joined_Users_List.SelectedItem != null)
+            if (Joined_Users_List.SelectedItem != null)
             {
                 currPmName = Joined_Users_List.SelectedItem.ToString();
                 refreshPrivateMessage();
@@ -210,11 +210,11 @@ namespace Client
             int i = 0;
             bool isFile = false;
             List<int> files = foob.pmFile(username, currPmName);
-            foreach(string s in message)
+            foreach (string s in message)
             {
-                foreach(int s2 in files)
+                foreach (int s2 in files)
                 {
-                    if (s2==i)
+                    if (s2 == i)
                     {
                         isFile = true;
                     }
@@ -243,9 +243,9 @@ namespace Client
             Microsoft.Win32.OpenFileDialog openFileDialog = new Microsoft.Win32.OpenFileDialog();
             bool? response = openFileDialog.ShowDialog();
             string filepath = "";
-            if(response == true)
+            if (response == true)
             {
-                if(allChat)
+                if (allChat)
                 {
                     filepath = openFileDialog.FileName;
                     foob.addGlobalMessage(username + ": ", roomName, false);
@@ -253,11 +253,11 @@ namespace Client
                     Public_Chat_Message_Box.AppendText(username + ": ");
                     loadFileServer(filepath);
                 }
-                else if(pmChat)
+                else if (pmChat)
                 {
                     filepath = openFileDialog.FileName;
-                    foob.addPM(username,currPmName, username + ": ",false);
-                    foob.addPM(username, currPmName, filepath,true);
+                    foob.addPM(username, currPmName, username + ": ", false);
+                    foob.addPM(username, currPmName, filepath, true);
                     Private_Chat_Message_Box.AppendText(username + ": ");
                     loadFileServer(filepath);
                 }
@@ -280,14 +280,14 @@ namespace Client
             Paragraph paragraph = new Paragraph(hyperlink);
             paragraph.IsEnabled = true;
 
-            if(allChat)
+            if (allChat)
             {
                 Public_Chat_Message_Box.Document.Blocks.Add(paragraph);
                 Public_Chat_Message_Box.IsDocumentEnabled = true;
                 Public_Chat_Message_Box.IsReadOnly = true;
                 Public_Chat_Message_Box.AppendText(Environment.NewLine);
             }
-            else if(pmChat)
+            else if (pmChat)
             {
                 Private_Chat_Message_Box.Document.Blocks.Add(paragraph);
                 Private_Chat_Message_Box.IsDocumentEnabled = true;

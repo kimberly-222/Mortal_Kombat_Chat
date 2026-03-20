@@ -4,7 +4,10 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="EnterMainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="480" Width="830"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen">
+
     <Grid>
         <Image Source="/bg_img.jpg" Stretch="Fill" Opacity="0.82" HorizontalAlignment="Stretch" Height="NaN" VerticalAlignment="Stretch" Width="NaN">
             <Image.Effect>
@@ -12,7 +15,7 @@
             </Image.Effect>
         </Image>
 
-        <Button x:Name="Refresh_Button" Content="REFRESH" HorizontalAlignment="Left" Height="41" VerticalAlignment="Top" Width="77" FontFamily="Consolas" FontSize="16" FontWeight="Bold" Margin="695,170,0,0" BorderThickness="3,3,3,3"  BorderBrush="Black"  Click="Refresh_Button_Click">
+        <Button x:Name="Refresh_Button" Content="REFRESH" HorizontalAlignment="Left" Height="41" VerticalAlignment="Top" Width="77" FontFamily="Consolas" FontSize="16" FontWeight="Bold" Margin="709,170,0,0" BorderThickness="3,3,3,3"  BorderBrush="Black"  Click="Refresh_Button_Click">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
@@ -41,12 +44,12 @@
                 <ImageBrush ImageSource="/exitbutton.png"/>
             </Button.Background>
         </Button>
-        <Button x:Name="CreateLobbyButton" Content="CREATE" HorizontalAlignment="Left" Height="42" Margin="593,344,0,0" VerticalAlignment="Top" Width="91" FontFamily="Consolas" FontWeight="Bold" FontSize="16" BorderBrush="Black" BorderThickness="3,3,3,3" Click="CreateLobbyButton_Click_1">
+        <Button x:Name="CreateLobbyButton" Content="CREATE" HorizontalAlignment="Left" Height="42" Margin="609,348,0,0" VerticalAlignment="Top" Width="91" FontFamily="Consolas" FontWeight="Bold" FontSize="16" BorderBrush="Black" BorderThickness="3,3,3,3" Click="CreateLobbyButton_Click_1">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
         </Button>
-        <Button x:Name="JoinGameButton" Content="JOIN" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="77" FontFamily="Consolas" FontSize="16" FontWeight="Bold" Margin="694,124,0,0" BorderThickness="3,3,3,3" BorderBrush="Black" Click="JoinGameButton_Click">
+        <Button x:Name="JoinGameButton" Content="JOIN" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="77" FontFamily="Consolas" FontSize="16" FontWeight="Bold" Margin="709,124,0,0" BorderThickness="3,3,3,3" BorderBrush="Black" Click="JoinGameButton_Click">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
@@ -64,8 +67,9 @@
         </Label>
         <Label Content="CREATE  NEW  LOBBY" HorizontalAlignment="Center" Height="40" Margin="0,306,0,0" VerticalAlignment="Top" Width="312" FontFamily="Papyrus" FontWeight="Bold" Foreground="Black" FontSize="20"/>
         <Label Content="LOBBY  PORTAL" HorizontalAlignment="Center" Height="40" Margin="0,23,0,0" VerticalAlignment="Top" Width="214" FontFamily="Papyrus" FontWeight="Bold" Foreground="Black" FontSize="20"/>
-        <Label x:Name="UsernameLabel" Content="username" HorizontalAlignment="Left" Height="33" Margin="720,7,0,0" VerticalAlignment="Top" Width="81" FontFamily="Papyrus" FontWeight="Bold" Foreground="White" FontSize="16" RenderTransformOrigin="0.802,0.516"/>
-        <Ellipse HorizontalAlignment="Left" Height="36" Margin="685,7,0,0" VerticalAlignment="Top" Width="38" Fill="#7393B3" Stroke="Black"/>
-        <Label x:Name="Initials" Content="AB" HorizontalAlignment="Left" Height="36" Margin="685,7,0,0" VerticalAlignment="Top" Width="38" FontFamily="Consolas" FontWeight="Bold" FontSize="13" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Label x:Name="UsernameLabel" Content="username" HorizontalAlignment="Left" Height="33" Margin="732,7,0,0" VerticalAlignment="Top" Width="81" FontFamily="Papyrus" FontWeight="Bold" Foreground="White" FontSize="16" RenderTransformOrigin="0.802,0.516"/>
+        <Ellipse HorizontalAlignment="Left" Height="36" Margin="694,7,0,0" VerticalAlignment="Top" Width="38" Fill="#7393B3" Stroke="Black"/>
+        <Label x:Name="Initials" Content="AB" HorizontalAlignment="Left" Height="36" Margin="695,7,0,0" VerticalAlignment="Top" Width="38" FontFamily="Consolas" FontWeight="Bold" FontSize="13" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Image Margin="6,362,614,12" Source="/Image2.png" Stretch="Uniform" Width="180" Height="60"/>
     </Grid>
 </Window>
