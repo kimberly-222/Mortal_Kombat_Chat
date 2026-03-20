@@ -1,3 +1,12 @@
+## Disclaimer
+This project is for **educational purposes only** as part of a university 
+assignment. Mortal Kombat X and all related images, characters, and assets 
+are trademarks of **Warner Bros. Interactive Entertainment** and 
+**NetherRealm Studios**. No copyright infringement intended.
+
+Some images used in this project were sourced from Google Images and belong 
+to their respective owners. No copyright infringement intended.
+
 # Mortal Kombat Chat - Online Gaming Lobby
 
 A distributed online gaming lobby system for Mortal Kombat X built using 
